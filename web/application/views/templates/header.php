@@ -12,10 +12,16 @@
 <div class="container">
 <nav class="sidePanel">
     <h1>Valvontajärjestelmä</h1>
-    <ul>
-        <li>Etusivu</li>
-        <li>Info</li>
-        <a href="<?php echo site_url('settings') ?>"><li>Asetukset</li></a>
-    </ul>
+    <?php
+        if(isset($_SESSION['user_log_in']) && $_SESSION['user_log_in']==true)
+        { ?>
+          <ul>
+              <li>Etusivu</li>
+              <li>Info</li>
+              <a href="<?php echo site_url('settings') ?>"><li>Asetukset</li></a>
+              <a href="<?php echo site_url('login/logout') ?>"><li>Kirjaudu ulos</li></a>
+          </ul>
+          <?php
+        }
+    ?>
 </nav>
-
