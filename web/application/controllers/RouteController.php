@@ -9,13 +9,26 @@ class RouteController extends CI_Controller{
          $this->load->model('DatabaseModel');
     }
 
+    public function check_permission()
+    {
+      if(isset($_SESSION['user_log_in']))
+      {
+        //ei tehdä mitään
+      }
+      else
+      {
+        redirect('login/user_login');
+      }
+    }
+
     public function index()
     {
+         $this->check_permission();
          $page = 'pages/etusivu';
          $this->load->view('templates/header');
-         
+
          $data['message'] = $this->DatabaseModel->getData();
-         
+
          $this->load->view($page, $data);
          $this->load->view('templates/footer');
     }
