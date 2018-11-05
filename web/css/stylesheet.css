@@ -4,6 +4,11 @@ body
     font-family: 'Roboto', sans-serif;
 }
 
+.sidePanel
+{
+    height: 100hv;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -37,7 +42,10 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
-
+.content
+{
+    grid-column: 2/4
+}
 
 .container
 {
