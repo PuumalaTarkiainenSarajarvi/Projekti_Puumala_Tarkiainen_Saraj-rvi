@@ -11,10 +11,6 @@
         public function printTable()
         {
             $this->DatabaseModel->getData();
-            foreach($this->result() as $row)
-            {
-                echo $row->title;
-            }
         }
     }
 

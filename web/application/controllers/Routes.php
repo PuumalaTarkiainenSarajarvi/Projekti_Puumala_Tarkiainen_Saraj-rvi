@@ -14,14 +14,9 @@ class Routes extends CI_Controller{
          $page = 'pages/etusivu';
          $this->load->view('templates/header');
          
-         $query = $this->DatabaseModel->getData();
-         foreach ($query as $row)
-         {
-                 echo $row->PersonID;
-                 echo $row->dt;
-         }
+         $data['message'] = $this->DatabaseModel->getData();
          
-         $this->load->view($page);
+         $this->load->view($page, $data);
          $this->load->view('templates/footer');
     }
 }

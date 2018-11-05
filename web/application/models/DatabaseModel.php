@@ -10,7 +10,7 @@ class DatabaseModel extends CI_Model {
     public function getData()
     {
         $query = $this->db->query("CALL GetPersonIDTable()");
-        return $query->result();
+        return $query->result_array();
     }
 
 }
