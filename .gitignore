@@ -1,2 +1,3 @@
-#DIRECTORIES#
-config
+#Files to ignore#
+config.php
+database.php

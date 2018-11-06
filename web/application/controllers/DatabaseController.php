@@ -12,6 +12,16 @@
         {
             $this->DatabaseModel->getData();
         }
+
+        public function postTimes()
+        {
+            $startTime = $_POST['startTime'];
+            $endTime = $_POST['endTime'];
+
+            echo $startTime;
+            echo $endTime;
+        }
+
     }
 
 ?>
