@@ -35,6 +35,7 @@ class RouteController extends CI_Controller{
 
     public function settings()
     {
+         $this->check_permission();
          $page = 'pages/settings';
 
          $this->load->view('templates/header');
