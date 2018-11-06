@@ -14,10 +14,10 @@
     <h1>Valvontajärjestelmä</h1>
 
     <?php
-        echo date('H:i:s');
         if(isset($_SESSION['user_log_in']) && $_SESSION['user_log_in']==true)
-        { 
-            echo $_SESSION['user'];?>
+        {
+            echo $_SESSION['user'];
+            echo date('H:i:s'); ?>
           <ul>
               <a href="<?php echo site_url('etusivu') ?>"><li>Etusivu</li></a>
               <li>Info</li>
