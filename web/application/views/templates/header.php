@@ -16,10 +16,10 @@
         if(isset($_SESSION['user_log_in']) && $_SESSION['user_log_in']==true)
         { ?>
           <ul>
-              <a href="<?php echo site_url('index') ?>"><li>Etusivu</li></a>
+              <a href="<?php echo site_url('etusivu') ?>"><li>Etusivu</li></a>
               <li>Info</li>
               <a href="<?php echo site_url('settings') ?>"><li>Asetukset</li></a>
-              <a href="<?php echo site_url('login/logout') ?>"><li>Kirjaudu ulos</li></a>
+              <a href="<?php echo site_url('logout') ?>"><li>Kirjaudu ulos</li></a>
           </ul>
           <?php
         }
