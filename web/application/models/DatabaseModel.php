@@ -13,6 +13,18 @@ class DatabaseModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function updateTimes($startTime, $endTime)
+    {
+        $data = array(
+                'dt' => $startTime,
+                'dt2' => $endTime
+
+        );
+
+        $this->db->where('id', );
+        $this->db->update('halytys', $data);
+    }
+
 }
 
 ?>
