@@ -12,12 +12,11 @@
 <div class="container">
 <nav class="sidePanel">
     <h1>Valvontajärjestelmä</h1>
-
-    <?php
-        echo date('H:i:s');
+        <?php
         if(isset($_SESSION['user_log_in']) && $_SESSION['user_log_in']==true)
         { 
-            echo $_SESSION['user'];?>
+            
+            ?><p class="userText">Hei, <?php echo $_SESSION['user'];?>!</p>
           <ul>
               <a href="<?php echo site_url('etusivu') ?>"><li>Etusivu</li></a>
               <li>Info</li>

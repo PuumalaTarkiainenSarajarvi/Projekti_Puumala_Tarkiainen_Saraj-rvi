@@ -1,5 +1,5 @@
 
-<div class="content">
+<div class="sensorTable">
     <table>
         <tr>
             <th>TapahtumaID</th>

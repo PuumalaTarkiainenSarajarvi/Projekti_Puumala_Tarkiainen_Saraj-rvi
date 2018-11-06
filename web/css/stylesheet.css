@@ -63,15 +63,31 @@ th, td {
     grid-row-gap: 0;
 }
 
+
+
+.sensorTable
+{
+    text-align: center;
+    grid-column: 2/6
+}
+
 .message
 {
-  grid-row: 1;
-  grid-column: 3/4;
+    font-size: 20px;
+    margin-top: 5vh;
+    grid-row: 1;
+    grid-column: 3/4;
 }
 
 .button
 {
     text-align: center;
+}
+
+.userText
+{
+    margin: 2vh 0 2vh 0;
+    font-size: 22px;
 }
 
 .sidePanel
