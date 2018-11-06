@@ -50,6 +50,7 @@ class Login extends CI_Controller
   public function logout()
   {
     $_SESSION['user_log_in']=false;
+    unset($_SESSION['user_log_in'], $_SESSION['user']);
     session_destroy();
 
     $page = 'pages/login';
