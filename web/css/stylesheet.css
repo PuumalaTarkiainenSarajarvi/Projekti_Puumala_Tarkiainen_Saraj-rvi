@@ -55,6 +55,13 @@ th, td {
     grid-column: 3/4;
 }
 
+.settingsContent
+{
+    margin-left: auto;
+    margin-right: auto;
+    grid-column: 2/5;
+}
+
 .container
 {
     display: grid;
