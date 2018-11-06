@@ -40,7 +40,7 @@ th, td {
 
 .content
 {
-    grid-column: 2/4
+    grid-column: 3/4
 }
 
 .firstRow
@@ -68,6 +68,11 @@ th, td {
   grid-column: 3/4;
 }
 
+.button
+{
+    text-align: center;
+}
+
 .sidePanel
 {
     height: 100vh;
@@ -77,4 +82,10 @@ th, td {
     text-align: center;
     grid-column: 1/2;
     background-color: #999999;
+}
+
+.rightSide
+{
+    height: 100vh;
+    grid-column: 5/6;
 }

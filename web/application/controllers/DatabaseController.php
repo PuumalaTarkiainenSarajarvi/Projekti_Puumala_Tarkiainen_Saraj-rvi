@@ -6,6 +6,7 @@
        {
            parent::__construct();
            $this->load->model('DatabaseModel');
+           date_default_timezone_set('Etc/GMT+2');
        }
 
         public function printTable()
