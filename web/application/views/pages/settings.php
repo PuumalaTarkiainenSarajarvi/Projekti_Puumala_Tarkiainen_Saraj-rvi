@@ -1,7 +1,12 @@
-<h3>Hälytysasetukset</h3>
-<p>Aseta aikaväli jolloin hälytykset ovat käytössä</p>
+<div class="content">
+<h3 class="firstRow">Hälytysasetukset</h3>
+<p class="secondRow">Aseta aikaväli jolloin hälytykset ovat käytössä</p>
 <form action="<?php echo site_url('databasecontroller/posttimes')?>" method="post">
-    Hälytyksen aloitusaika:<input type="time" name="startTime"><br>
-    Hälytyksen lopetusaika:<input type="time" name="endTime"><br>
-    <input type="submit">
+    Hälytyksen aikaväli<input type="time" name="startTime"> - <input type="time" name="endTime"><br>
+    <input class="button" type="submit">
 </form>
+
+<div class="rightSide"> </div>
+
+</div>
+</div>
