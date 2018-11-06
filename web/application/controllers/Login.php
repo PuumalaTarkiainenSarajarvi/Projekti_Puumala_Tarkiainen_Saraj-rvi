@@ -24,12 +24,8 @@ class Login extends CI_Controller
     $form_account=$this->input->post('Käyttäjätunnus');
     $form_password=$this->input->post('Salasana');
     $database_password=$this->Login_model->get_account_password($form_account);
-    /*if(password_verify($form_password,$database_password))
-    {
-      $_SESSION['user_log_in']=true;
-      $_SESSION['user']=$form_account;
-    }*/
-    if($form_password == $database_password && isset($form_account))
+
+    if(password_verify($form_password,$database_password) && isset($form_account))
     {
       $_SESSION['user_log_in']=true;
       $_SESSION['user']=$form_account;
