@@ -21,7 +21,7 @@ class DatabaseModel extends CI_Model {
 
         );
 
-        $this->db->where('id', );
+        $this->db->where('halytysID', 1);
         $this->db->update('halytys', $data);
     }
 

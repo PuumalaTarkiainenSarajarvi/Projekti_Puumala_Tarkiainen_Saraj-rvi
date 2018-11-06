@@ -18,8 +18,7 @@
             $startTime = $_POST['startTime'];
             $endTime = $_POST['endTime'];
 
-            echo $startTime;
-            echo $endTime;
+            $this->DatabaseModel->updateTimes($startTime, $endTime);
         }
 
     }
