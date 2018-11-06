@@ -59,6 +59,7 @@ th, td {
 {
     display: grid;
     grid-template-columns: repeat(5, 20vw);
+    grid-template-rows: repeat(5, 20vh);
     grid-row-gap: 0;
 
 }
@@ -76,6 +77,8 @@ th, td {
     margin: 0 0 0 0;
     text-align: center;
     grid-column: 1/2;
+    grid-row-start: 1;
+    grid-row-end: 5;
     background-color: #999999;
 }
 
