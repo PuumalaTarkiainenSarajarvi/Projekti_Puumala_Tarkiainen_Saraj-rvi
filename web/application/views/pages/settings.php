@@ -6,7 +6,11 @@
     <input class="button" type="submit" value="Aseta">
 </form>
 
-<div class="rightSide"> </div>
+<div class="thirdRow">
+    <form action="" method="post">
+        <input class="stopButton" type="button" value="Pysäytä hälytykset">
+    </form>
+</div>
 
 </div>
 </div>
