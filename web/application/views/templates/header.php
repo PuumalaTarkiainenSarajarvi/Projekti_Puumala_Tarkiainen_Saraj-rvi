@@ -23,5 +23,10 @@
           </ul>
           <?php
         }
+        else
+        { ?>
+            <ul><a href="<?php echo site_url('login/user_login') ?>"><li>Kirjaudu</li></a></ul>
+            <?php
+        }
     ?>
 </nav>

@@ -39,8 +39,11 @@ class Login extends CI_Controller
     else
     {
       $_SESSION['user_log_in']=false;
-      $data['message']='Käyttäjätunnus tai salasana ei täsmää';
+      $data['message']='Käyttäjätunnus tai salasana ei täsmää,
+                        ole hyvä ja tarkista tiedot.';
+      $this->load->view('templates/header');
       $this->load->view('pages/message',$data);
+      $this->load->view('templates/footer');
     }
   }
   public function logout()

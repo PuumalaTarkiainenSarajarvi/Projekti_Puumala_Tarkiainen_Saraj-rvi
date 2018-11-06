@@ -60,7 +60,12 @@ th, td {
     display: grid;
     grid-template-columns: repeat(5, 20vw);
     grid-row-gap: 0;
+}
 
+.message
+{
+  grid-row: 1;
+  grid-column: 3/4;
 }
 
 .sidePanel
