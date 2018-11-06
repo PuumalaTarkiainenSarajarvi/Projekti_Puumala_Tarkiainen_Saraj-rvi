@@ -29,7 +29,7 @@ class Login extends CI_Controller
       $_SESSION['user_log_in']=true;
       $_SESSION['user']=$form_account;
     }*/
-    if($form_password == $database_password)
+    if($form_password == $database_password && isset($form_account))
     {
       $_SESSION['user_log_in']=true;
       $_SESSION['user']=$form_account;
