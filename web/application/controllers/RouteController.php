@@ -11,7 +11,7 @@ class RouteController extends CI_Controller{
 
     public function check_permission()
     {
-      if(isset($_SESSION['user_log_in']) && $_SESSION['user_log_in'] = true)
+      if(isset($_SESSION['user_log_in']) && $_SESSION['user_log_in'] == true)
       {
         //ei tehdä mitään
       }
