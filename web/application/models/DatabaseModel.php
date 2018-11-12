@@ -25,6 +25,71 @@ class DatabaseModel extends CI_Model {
         $this->db->update('halytys', $data);
     }
 
+    public function stopAlert()
+    {
+        $this->db->query("CALL update_off");
+    }
+
+    public function checkAutoAlert()
+    {
+        $query = $this->db->get_where('halytys', array('halytysID'=> 1));
+        
+        foreach($query->result_array() as $row)
+        {
+
+            if($row['verify']== 1)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+    }
+
+    public function checkManualAlert()
+    {
+        $query = $this->db->get_where('halytys', array('halytysID'=> 1));
+        
+        foreach($query->result_array() as $row)
+        {
+
+            if($row['on_off'] == 1)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+    }
+
+    public function startAutoAlert()
+    {
+        $this->db->query('CALL update_verify_on');   
+    }
+
+    public function stopAutoAlert()
+    {
+        $this->db->query('CALL update_verify_off');   
+    }
+
+    public function startManualAlert()
+    {
+        $this->db->query('CALL update_on');   
+    }
+
+    public function stopManualAlert()
+    {
+        $this->db->query('CALL update_off');   
+    }
+
 }
 
 ?>

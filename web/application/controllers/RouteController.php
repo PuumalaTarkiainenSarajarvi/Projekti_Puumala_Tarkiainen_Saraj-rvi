@@ -38,8 +38,11 @@ class RouteController extends CI_Controller{
          $this->check_permission();
          $page = 'pages/settings';
 
+         $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
+         $data['manualAlertsOn'] = $this->DatabaseModel->checkManualAlert();
+
          $this->load->view('templates/header');
-         $this->load->view($page);
+         $this->load->view($page, $data);
          $this->load->view('templates/footer');
     }
 }
