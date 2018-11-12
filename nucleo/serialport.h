@@ -1,11 +1,10 @@
 #include <mbed.h>
-#include <string>
 
 class SerialPort
 {
 public:
   SerialPort();
-  void printSerial(string message);
+  void printSerial(int message); // 1 = motion, 2 = magnetOn, 3 = magnetOff
 private:
   Serial pc;
 };

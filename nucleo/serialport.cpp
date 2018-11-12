@@ -5,7 +5,20 @@ SerialPort::SerialPort() : pc(USBTX,USBRX)
 
 }
 
-void SerialPort::printSerial(string message)
+void SerialPort::printSerial(int message)
 {
-  pc.printf("1");
+  switch(message)
+  {
+    case 1 :
+        pc.printf("motion");
+        break;
+    case 2 :
+        pc.printf("magnetOn");
+        break;
+    case 3 :
+        pc.printf("magnetOff");
+        break;
+    default :
+        break;
+  }
 }
