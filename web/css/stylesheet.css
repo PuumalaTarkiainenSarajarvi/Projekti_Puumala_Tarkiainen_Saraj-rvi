@@ -1,9 +1,36 @@
+/*Yleiset*/
+*{
+    text-decoration: none;
+}
+
+.nav a
+{
+    text-decoration: none;
+}
+
 body
 {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+a:link
+{
+    color: black;
+    text-decoration: none;
+    
+}
+
+input:hover
+{
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
 
 ul {
     list-style-type: none;
@@ -13,6 +40,7 @@ ul {
 
 li
 {
+    color: black;
     font-size: 20px;
     margin: auto;
     height: 5vh;
@@ -25,23 +53,43 @@ li:hover
     background-color: #bfbfbf;
 }
 
-table
+.container
 {
-    width: 50vh;
-    display: inline-block;
-    margin: 5vh 25vh 0 25vh;
-    text-align: center;
-    align-items: center;
-}
-
-th, td {
-    border-bottom: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: repeat(5, 20vw);
+    grid-template-rows: repeat(4, 25vh);
+    grid-row-gap: 0;
 }
 
 .content
 {
     grid-column: 3/4
 }
+
+.sidePanel
+{
+    height: 100vh;
+    width: 100%;
+    min-width: 200px;
+    margin: 0 0 0 0;
+    text-align: center;
+    grid-column: 1/2;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    background-color: #999999;
+}
+
+.rightSide
+{   
+    display: block;
+    float: right;
+    width: 18vw;
+    height: 100vh;
+    grid-column: 5/6;
+    background-color: #999999;
+}
+
+/*Asetussivu*/
 
 .firstRow
 {
@@ -74,6 +122,7 @@ th, td {
 
 .thirdRow
 {
+    margin-left: 1vw; 
     grid-row: 3;
     grid-column: 2/3;
 }
@@ -112,12 +161,59 @@ th, td {
     margin-right: auto;
 }
 
-.container
+/*Infosivu*/
+
+.infoNav
 {
-    display: grid;
-    grid-template-columns: repeat(5, 20vw);
-    grid-template-rows: repeat(4, 25vh);
-    grid-row-gap: 0;
+    width: 100%;
+    grid-column: 2/5;
+    /*margin-top: 10vh;*/
+}
+
+.infoList
+{
+    text-decoration: none;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #999999;
+    
+}
+
+.infoItem
+{
+    text-decoration: none;
+    float: left;
+    margin-left: 5vw; 
+}
+
+.infoLink
+{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 0.5em;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0 auto 0 auto;
+}
+
+table
+{
+    font-size: 20px;
+    width: 50vh;
+    display: inline-block;
+    margin: 0 25vh 0 25vh;
+    text-align: center;
+    align-items: center;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
 }
 
 .sensorTable
@@ -125,6 +221,8 @@ th, td {
     text-align: center;
     grid-column: 2/6
 }
+
+/*Kirjautumissivu*/
 
 .message
 {
@@ -140,23 +238,4 @@ th, td {
 {
     margin: 2vh 0 2vh 0;
     font-size: 22px;
-}
-
-.sidePanel
-{
-    height: 100vh;
-    width: 18vw;
-    min-width: 200px;
-    margin: 0 0 0 0;
-    text-align: center;
-    grid-column: 1/2;
-    grid-row-start: 1;
-    grid-row-end: 5;
-    background-color: #999999;
-}
-
-.rightSide
-{
-    height: 100vh;
-    grid-column: 5/6;
 }

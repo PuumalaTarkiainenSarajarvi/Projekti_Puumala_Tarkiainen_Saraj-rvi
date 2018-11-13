@@ -21,7 +21,7 @@
             $endTime = $_POST['endTime'];
 
             $this->DatabaseModel->updateTimes($startTime, $endTime);
-
+            
             redirect('settings','refresh');
         }
 

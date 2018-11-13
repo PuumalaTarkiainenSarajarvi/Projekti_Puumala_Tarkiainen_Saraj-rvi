@@ -1,6 +1,4 @@
-
-    
-    <div class ="firstRow">
+        <div class ="firstRow">
     <h1>Hälytysasetukset</h1>
     <h3>Aseta aikaväli jolloin hälytykset ovat käytössä</h2>
     <form action="<?php echo site_url('databasecontroller/posttimes')?>" method="post">

@@ -19,7 +19,7 @@
             <p class="userText">Hei, <?php echo $_SESSION['user'];?>!</p>
           <ul>
               <a href="<?php echo site_url('etusivu') ?>"><li>Etusivu</li></a>
-              <li>Info</li>
+              <a href="<?php echo site_url('info') ?>"><li>Info</li></a>
               <a href="<?php echo site_url('settings') ?>"><li>Asetukset</li></a>
               <a href="<?php echo site_url('logout') ?>"><li>Kirjaudu ulos</li></a>
           </ul>
