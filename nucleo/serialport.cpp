@@ -10,13 +10,13 @@ void SerialPort::printSerial(int message)
   switch(message)
   {
     case 1 :
-        pc.printf("motion");
+        pc.printf("motion\n");
         break;
     case 2 :
-        pc.printf("magnetOn");
+        pc.printf("magnetOn\n");
         break;
     case 3 :
-        pc.printf("magnetOff");
+        pc.printf("magnetOff\n");
         break;
     default :
         break;

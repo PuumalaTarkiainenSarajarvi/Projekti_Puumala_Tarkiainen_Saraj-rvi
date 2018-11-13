@@ -3,6 +3,13 @@
 #include "sensor.h"
 #include "serialport.h"
 
+#define STATUS_MAGNET_ON 1
+#define STATUS_MAGNET_OFF 2
+
+#define MESSAGE_MOTION 1
+#define MESSAGE_MAGNET_ON 2
+#define MESSAGE_MAGNET_OFF 3
+
 int main()
 {
   Sensor* sensor = new Sensor;
@@ -13,18 +20,18 @@ int main()
   {
     if(sensor->getMotionStatus()) // palauttaa liikahduksen
     {
-      serialPort->printSerial(1); // = motion
+      serialPort->printSerial(MESSAGE_MOTION);
     }
 
     magnetStatus = sensor->getMagnetStatus(); // palauttaa tilan muutoksen
 
-    if(magnetStatus == 1)
+    if(magnetStatus == STATUS_MAGNET_ON)
     {
-      serialPort->printSerial(2); // = magnetOn
+      serialPort->printSerial(MESSAGE_MAGNET_ON);
     }
-    else if(magnetStatus == 2)
+    else if(magnetStatus == STATUS_MAGNET_OFF)
     {
-      serialPort->printSerial(3); // = magnetOff
+      serialPort->printSerial(MESSAGE_MAGNET_OFF);
     }
 
     wait (0.1);
