@@ -60,3 +60,5 @@ $route['infomotion'] = 'routecontroller/infomotion';
 $route['infodoors'] = 'routecontroller/infodoors';
 $route['infotemps'] = 'routecontroller/infotemps';
 $route['infopics'] = 'routecontroller/infopics';
+$route['alertsettings'] = 'routecontroller/alertsettings';
+$route['loginsettings'] = 'routecontroller/loginsettings';

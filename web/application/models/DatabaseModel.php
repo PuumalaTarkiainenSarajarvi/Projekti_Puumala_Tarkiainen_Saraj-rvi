@@ -13,6 +13,13 @@ class DatabaseModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function getDoorData()
+    {
+        $query = $this->db->query("SELECT * from oviinfo");
+        return $query->result_array();
+
+    }
+
     public function updateTimes($startTime, $endTime)
     {
         $data = array(

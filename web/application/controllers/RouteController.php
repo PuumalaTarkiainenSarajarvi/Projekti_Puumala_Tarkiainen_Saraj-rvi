@@ -44,6 +44,34 @@ class RouteController extends CI_Controller{
          $this->load->view('templates/footer');
     }
 
+    public function alertSettings()
+    {
+         $this->check_permission();
+         $page = 'pages/alertsettings';
+         $nav = 'pages/settings';
+         $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
+         $data['manualAlertsOn'] = $this->DatabaseModel->checkManualAlert();
+
+         $this->load->view('templates/header');
+         $this->load->view($nav);
+         $this->load->view($page, $data);
+         $this->load->view('templates/footer');
+    }
+
+    public function loginSettings()
+    {
+         $this->check_permission();
+         $page = 'pages/loginsettings';
+         $nav = 'pages/settings';
+         $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
+         $data['manualAlertsOn'] = $this->DatabaseModel->checkManualAlert();
+
+         $this->load->view('templates/header');
+         $this->load->view($nav);
+         $this->load->view($page, $data);
+         $this->load->view('templates/footer');
+    }
+
     public function info()
     {
         $this->check_permission();
@@ -76,9 +104,11 @@ class RouteController extends CI_Controller{
         $info = 'pages/info';
         $content = 'pages/infodoors';
         $this->load->view('templates/header');
+        
+        $data['sensortable'] = $this->DatabaseModel->getDoorData();
 
         $this->load->view($info);
-        $this->load->view($content);
+        $this->load->view($content, $data);
         $this->load->view('templates/footer');
     }
 

@@ -15,6 +15,11 @@
             $this->DatabaseModel->getData();
         }
 
+        public function printDoorTable()
+        {
+            $this->DatabaseModel->getDoorData();
+        }
+
         public function postTimes()
         {
             $startTime = $_POST['startTime'];
@@ -22,31 +27,31 @@
 
             $this->DatabaseModel->updateTimes($startTime, $endTime);
             
-            redirect('settings','refresh');
+            redirect('alertsettings','refresh');
         }
 
         public function startAutoAlerts()
         {
             $this->DatabaseModel->startAutoAlert();
-            redirect('settings','refresh');
+            redirect('alertsettings','refresh');
         }
 
         public function stopAutoAlerts()
         {
             $this->DatabaseModel->stopAutoAlert();
-            redirect('settings','refresh');
+            redirect('alertsettings','refresh');
         }
 
         public function startManualAlerts()
         {
             $this->DatabaseModel->startManualAlert();  
-            redirect('settings','refresh'); 
+            redirect('alertsettings','refresh'); 
         }
 
         public function stopManualAlerts()
         {
             $this->DatabaseModel->stopManualAlert();   
-            redirect('settings','refresh');
+            redirect('alertsettings','refresh');
         }
 
     }
