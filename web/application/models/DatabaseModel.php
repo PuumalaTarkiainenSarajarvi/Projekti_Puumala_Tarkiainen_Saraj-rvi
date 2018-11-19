@@ -20,6 +20,49 @@ class DatabaseModel extends CI_Model {
 
     }
 
+    public function getAlertTimes()
+    {
+        $this->db->select('dt, dt2');
+        $this->db->from('halytys');
+        $this->db->where('halytysID', 1);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
+    public function getRecentEvent()
+    {
+        $this->db->select('dt');
+        $this->db->from('Info');
+        $this->db->order_by('PERSONID','desc');
+        $query = $this->db->get();
+        $motionRow = $query->first_row();
+
+        $this->db->select('dt');
+        $this->db->from('oviinfo');
+        $this->db->order_by('ID','desc');
+        $query = $this->db->get();
+        $doorRow = $query->first_row();
+
+        foreach($motionRow as $row)
+        {
+            $motionTime = $row;
+        }
+
+        foreach($doorRow as $row)
+        {
+            $doorTime = $row;
+        }
+
+        if($doorTime > $motionTime)
+        {
+            return $dateToReturn = date('H:i d-m-Y', strtotime($doorTime));
+        }
+        else
+        {
+            return $dateToReturn = date('H:i d-m-Y', strtotime($motionTime));
+        }
+    }
+
     public function updateTimes($startTime, $endTime)
     {
         $data = array(

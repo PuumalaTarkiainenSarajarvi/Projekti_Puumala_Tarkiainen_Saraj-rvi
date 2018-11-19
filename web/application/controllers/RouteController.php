@@ -23,11 +23,17 @@ class RouteController extends CI_Controller{
 
     public function index()
     {
+
          $this->check_permission();
          $page = 'pages/etusivu';
+         $data['row'] = $this->DatabaseModel->getAlertTimes();
+         $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
+         $data['manualOn'] = $this->DatabaseModel->checkManualAlert();
+         $data['recentEvent'] = $this->DatabaseModel->getRecentEvent();
+
          $this->load->view('templates/header');
 
-         $this->load->view($page);
+         $this->load->view($page, $data);
          $this->load->view('templates/footer');
     }
 
