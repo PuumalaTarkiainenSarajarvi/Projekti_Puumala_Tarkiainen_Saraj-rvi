@@ -57,6 +57,7 @@ class RouteController extends CI_Controller{
          $nav = 'pages/settings';
          $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
          $data['manualAlertsOn'] = $this->DatabaseModel->checkManualAlert();
+         $data['autoAlertOn'] = $this->DatabaseModel->checkAutoOnOff();
 
          $this->load->view('templates/header');
          $this->load->view($nav);

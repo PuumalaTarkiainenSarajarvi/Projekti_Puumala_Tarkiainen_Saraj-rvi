@@ -100,6 +100,25 @@ class DatabaseModel extends CI_Model {
 
     }
 
+    public function checkAutoOnOff()
+    {
+        $query = $this->db->get_where('halytys', array('halytysID'=> 1));
+        
+        foreach($query->result_array() as $row)
+        {
+
+            if($row['auto_on_off']== 1)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+    }
+
     public function checkManualAlert()
     {
         $query = $this->db->get_where('halytys', array('halytysID'=> 1));
