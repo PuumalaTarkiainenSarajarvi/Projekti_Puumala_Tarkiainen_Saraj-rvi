@@ -75,7 +75,7 @@
     <div class="fourthRow">
     <h3>Automaattisen hälytyksen käynnistys</h3>
     <p>Nappia painamalla käynnistetään automaattiset hälytykset.
-    <br></p> <strong style="b"> HUOM! Manuaaliset hälytykset poistetaan käytöstä kun automaattiset kytketään käyttöön</strong>
+    <br></p> <strong style="b"> HUOM! Manuaaliset hälytykset poistetaan käytöstä kun automaattinen hälytys kytkeytyy päälle</strong>
         <form action=" <?php echo site_url('databasecontroller/startautoalerts')?> " method="post">
             <input class="startButton" type="submit" value="Käynnistä hälytykset">
         </form>

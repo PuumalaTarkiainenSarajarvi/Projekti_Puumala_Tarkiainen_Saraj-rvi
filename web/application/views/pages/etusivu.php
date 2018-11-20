@@ -11,7 +11,7 @@
 
 function autoUpdate()
 {
-    $('.firstRow').load("<?php echo base_url().'/index.php/ajaxcontroller/indexdata' ?>");
+    $('.firstRow').load("<?php echo base_url().'/index.php/ajax/indexdata' ?>");
 }
 
 $(document).ready(function()
