@@ -49,16 +49,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'routecontroller';
+$route['default_controller'] = 'Route';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['logout'] = 'login/logout';
-$route['etusivu'] = 'RouteController/index';
-$route['settings'] = 'RouteController/settings';
-$route['info'] = 'RouteController/info';
-$route['infomotion'] = 'RouteController/infomotion';
-$route['infodoors'] = 'RouteController/infodoors';
-$route['infotemps'] = 'RouteController/infotemps';
-$route['infopics'] = 'RouteController/infopics';
-$route['alertsettings'] = 'RouteController/alertsettings';
-$route['loginsettings'] = 'RouteController/loginsettings';
+$route['etusivu'] = 'Route/index';
+$route['settings'] = 'Route/settings';
+$route['info'] = 'Route/info';
+$route['infomotion'] = 'Route/infomotion';
+$route['infodoors'] = 'Route/infodoors';
+$route['infotemps'] = 'Route/infotemps';
+$route['infopics'] = 'Route/infopics';
+$route['alertsettings'] = 'Route/alertsettings';
+$route['loginsettings'] = 'Route/loginsettings';
