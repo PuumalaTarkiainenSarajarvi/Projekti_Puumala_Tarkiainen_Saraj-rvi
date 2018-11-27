@@ -22,3 +22,8 @@ void SerialPort::printSerial(int message)
         break;
   }
 }
+
+void SerialPort::printTemp(double temperature)
+{
+  pc.printf("%lf\n", temperature);
+}
