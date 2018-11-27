@@ -58,6 +58,12 @@ def checkAlarm():
 while True:
     line = ser.readline()
 
+    try:
+        float(line)
+        print("##DEBUG: temperature")
+        print(line)
+    except ValueError:
+    
     if line == "motion\n":
         print("##DEBUG: motion")
         mycursor.callproc('PutInfoAndTime') # aikaleima
