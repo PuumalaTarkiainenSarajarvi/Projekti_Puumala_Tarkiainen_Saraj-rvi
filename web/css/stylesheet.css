@@ -89,6 +89,15 @@ li:hover
     background-color: #999999;
 }
 
+.temp
+{
+    grid-row: 1;
+    grid-column: 5/6;
+    float: right;
+    right: 0;
+
+}
+
 /*Asetussivu*/
 
 .settingsNav

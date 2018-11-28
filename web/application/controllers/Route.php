@@ -26,6 +26,7 @@ class Route extends CI_Controller{
 
          $this->check_permission();
          $page = 'pages/etusivu';
+         $data['temp'] = $this->DatabaseModel->getCurTempData();
          $data['row'] = $this->DatabaseModel->getAlertTimes();
          $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
          $data['manualOn'] = $this->DatabaseModel->checkManualAlert();
@@ -122,12 +123,13 @@ class Route extends CI_Controller{
     public function infoTemps()
     {
         $this->check_permission();
+        $data['temp'] = $this->DatabaseModel->getAvgTempData();
         $info = 'pages/info';
         $content = 'pages/infotemps';
         $this->load->view('templates/header');
 
         $this->load->view($info);
-        $this->load->view($content);
+        $this->load->view($content, $data);
         $this->load->view('templates/footer');
     }
 

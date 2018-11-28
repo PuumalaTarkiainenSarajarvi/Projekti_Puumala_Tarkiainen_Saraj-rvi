@@ -20,6 +20,28 @@ class DatabaseModel extends CI_Model {
 
     }
 
+    public function getCurTempData()
+    {
+
+        $this->db->select('Temperature');
+        $this->db->from('HourlyTemperature');
+        $this->db->order_by('ID','desc');
+        $query = $this->db->get();
+        $tempRow = $query->first_row();
+
+        foreach($tempRow as $row)
+        {
+            $temp = $row;
+        }
+        return $temp;
+    }
+
+    public function getAvgTempData()
+    {
+        $query = $this->db->query("CALL GetTemperatureTable");
+        return $query->result_array();
+    }
+
     public function getAlertTimes()
     {
         $this->db->select('dt, dt2');
