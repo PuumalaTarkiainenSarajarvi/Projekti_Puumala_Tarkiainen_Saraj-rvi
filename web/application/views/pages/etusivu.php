@@ -1,6 +1,3 @@
-<?php
-print_r(glob("img/*.jpg"));
-?>
 <div class="firstRow">
     <h2>Hei, <?php echo $_SESSION['user']?>!</h2>
     <h3>Hälytykset ovat tällä hetkellä <?php if($verifyOn && !$manualOn) echo "automaattitilassa"?> 
