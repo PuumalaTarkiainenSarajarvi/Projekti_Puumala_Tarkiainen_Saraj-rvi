@@ -3,6 +3,10 @@
     text-decoration: none;
 }
 
+body
+{
+}
+
 .nav a
 {
     text-decoration: none;
@@ -74,6 +78,7 @@ nav
 
 .sidePanel
 {
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     min-width: 200px;
@@ -252,25 +257,32 @@ nav
 
 .infoNav
 {
-    display: block;
+    display: inline;
     width: 100%;
-    height: 50px;
+    height: 40px;
     grid-column: 2/6;
     grid-row: 1;
     /*margin-top: 10vh;*/
+    
+    background-color: #999999;
+}
+
+.listContainer
+{
+    display: table;
+    margin: 0 auto 0 auto;
 }
 
 .infoList
 {
-    text-decoration: none;
     width: 100%;
+    text-decoration: none;
     height: 2.5em;
     list-style-type: none;
     text-align: center;
-    margin: 0;
+    margin: 0 auto 0 auto;
     padding: 0;
     overflow: hidden;
-    background-color: #999999;
     
 }
 
@@ -279,6 +291,10 @@ nav
     text-decoration: none;
     float: left;
     margin-left: 2vw; 
+}
+
+#lastItem
+{
 }
 
 .infoLink
