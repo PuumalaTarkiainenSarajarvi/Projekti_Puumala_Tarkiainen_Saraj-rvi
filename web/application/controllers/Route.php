@@ -138,10 +138,12 @@ class Route extends CI_Controller{
         $this->check_permission();
         $info = 'pages/info';
         $content = 'pages/infopics';
+        $data['pics'] = glob("img/*.jpg");
+
         $this->load->view('templates/header');
 
         $this->load->view($info);
-        $this->load->view($content);
+        $this->load->view($content, $data);
         $this->load->view('templates/footer');
     }
 }
