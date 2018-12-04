@@ -6,6 +6,7 @@
     <h3>Automaattinen hälytys on asetettu välille 
     <?php if(isset($row)) {echo substr($row['dt'],0,-3);?> - <?php echo substr($row['dt2'],0,-3);}?></h3>
     <h3>Viimeisin hälytys tapahtunut <?php echo $recentEvent ?></h3>
+    <h3>Tilan ovi on <?php if($doorState){ echo "auki."; } else{ echo "kiinni"; } ?></h3>
     
 </div>
 <h3 class="temp">Lämpötila: <?php echo $temp ?>°C</h3>

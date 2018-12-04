@@ -161,6 +161,25 @@ class DatabaseModel extends CI_Model {
 
     }
 
+    public function checkDoorState()
+    {
+        $query = $this->db->get_where('halytys', array('halytysID' => 1));
+
+        foreach($query->result_array() as $row)
+        {
+
+            if($row['ovi_onOff'] == 1)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+    }
+
     public function startAutoAlert()
     {
         $this->db->query('CALL update_verify_on');   

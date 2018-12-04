@@ -11,6 +11,7 @@ class Ajax extends CI_Controller{
 
     public function indexData()
     {
+        $doorState = $this->DatabaseModel->checkDoorState();
         $row = $this->DatabaseModel->getAlertTimes();
         $verifyOn = $this->DatabaseModel->checkAutoAlert();
         $manualOn = $this->DatabaseModel->checkManualAlert();
@@ -26,6 +27,7 @@ class Ajax extends CI_Controller{
         echo "</h3>
         <h3>Viimeisin hälytys tapahtunut "; echo $recentEvent; echo"</h3>
     </div>";
+    echo "<h3>Tilan ovi on "; if($doorState){ echo "auki."; } else{ echo "kiinni"; } echo "</h3>";
         
     }
 }

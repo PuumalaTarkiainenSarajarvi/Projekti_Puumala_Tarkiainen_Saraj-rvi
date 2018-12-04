@@ -26,6 +26,7 @@ class Route extends CI_Controller{
 
          $this->check_permission();
          $page = 'pages/etusivu';
+         $data['doorState'] = $this->DatabaseModel->checkDoorState();
          $data['temp'] = $this->DatabaseModel->getCurTempData();
          $data['row'] = $this->DatabaseModel->getAlertTimes();
          $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();

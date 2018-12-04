@@ -13,7 +13,7 @@
     ?>
         <tr>
             <td>
-                <?php echo $row['temperature24h'];
+                <?php echo substr($row['temperature24h'],0,4);
                 ?>
             </td>
             <td>
