@@ -11,7 +11,7 @@
 #define MESSAGE_MAGNET_ON 2
 #define MESSAGE_MAGNET_OFF 3
 
-int tempTimerStatus;
+int tempTimerStatus = 1;
 
 void enableTemperature()
 {
