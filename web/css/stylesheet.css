@@ -87,6 +87,11 @@ nav
     height: 100%;
 }
 
+.time
+{
+    min-height: 5vh;
+}
+
 .container
 {
     display: grid;
@@ -423,6 +428,6 @@ th, td {
 
 .userText
 {
-    margin: 2vh 0 2vh 0;
+    margin: 0 0 2vh 0;
     font-size: 22px;
 }
