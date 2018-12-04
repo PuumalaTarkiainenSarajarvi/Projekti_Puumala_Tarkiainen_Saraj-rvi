@@ -1,3 +1,24 @@
+/* Variables */
+:root
+{
+  --color-base03  :#002b36; /*brblack*/
+  --color-base02  :#073642; /*black*/
+  --color-base01  :#586e75; /*brgreen*/
+  --color-base00  :#657b83; /*bryellow*/
+  --color-base0   :#839496; /*brblue*/
+  --color-base1   :#93a1a1; /*brcyan*/
+  --color-base2   :#eee8d5; /*white*/
+  --color-base3   :#fdf6e3; /*brwhite*/
+  --color-yellow  :#b58900; /*yellow*/
+  --color-orange  :#cb4b16; /*brred*/
+  --color-red     :#dc322f; /*red*/
+  --color-magenta :#d33682; /*magenta*/
+  --color-violet  :#6c71c4; /*brmagenta*/
+  --color-blue    :#268bd2; /*blue*/
+  --color-cyan    :#2aa198; /*cyan*/
+  --color-green   :#859900; /*green*/
+}
+
 /*Yleiset*/
 *{
     text-decoration: none;
@@ -16,6 +37,7 @@ body
 {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    color: var(--color-base2);
 }
 
 a
@@ -28,7 +50,6 @@ a:link
 {
     color: black;
     text-decoration: none;
-    
 }
 
 input:hover
@@ -44,17 +65,21 @@ ul {
 
 li
 {
-    color: black;
     font-size: 20px;
     margin: auto;
     height: 5vh;
     text-align: center;
     border-radius: 5px;
+    color: var(--color-base2);
 }
 
 li:hover
 {
-    background-color: #bfbfbf;
+    background-color: var(--color-base03);
+    height: 5vh;
+    border-radius: 5px;
+    min-height: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 nav
@@ -69,6 +94,7 @@ nav
     grid-template-columns: repeat(5, 20vw);
     grid-auto-rows: repeat(4, 25vh);
     grid-row-gap: 0;
+    background-image: url("../img/bg-noise.png");
 }
 
 .content
@@ -87,11 +113,21 @@ nav
     grid-column: 1/2;
     grid-row-start: 1;
     grid-row-end: 5;
-    background-color: #999999;
+    background-color: var(--color-base02);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-right-style: solid;
+    border-color: var(--color-cyan);
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.main-header
+{
+  color: #239687;
+  display: block;
 }
 
 .rightSide
-{   
+{
     display: block;
     float: right;
     width: 18vw;
@@ -106,7 +142,6 @@ nav
     grid-column: 5/6;
     float: right;
     right: 0;
-
 }
 
 /*Asetussivu*/
@@ -114,18 +149,25 @@ nav
 .settingsNav
 {
     width: 100%;
+    height: 40px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: var(--color-cyan);
 }
 
 .settingsList
 {
     text-decoration: none;
     width: 100%;
+    height: 2.5em;
     list-style-type: none;
     text-align: center;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #999999;
+    background-color: var(--color-base02);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .settingsItem
@@ -137,6 +179,7 @@ nav
 
 .settingsLink
 {
+    color: var(--color-base2);
     text-decoration: none;
     display: block;
     text-align: center;
@@ -167,7 +210,7 @@ nav
 }
 
 .timeInput
-{ 
+{
     margin-left: 2vw;
 }
 
@@ -185,7 +228,8 @@ nav
     text-align: center;
     position: relative;
     height: 100%;
-    border: 1px solid grey; 
+    min-height: 25vh;
+    border: 1px solid var(--color-cyan);
     grid-row: 3;
     grid-column: 2/4;
 }
@@ -195,7 +239,8 @@ nav
     text-align: center;
     position: relative;
     height: 100%;
-    border: 1px solid grey;
+    min-height: 25vh;
+    border: 1px solid var(--color-cyan);
     display: block;
     float: right;
     grid-row: 3;
@@ -262,9 +307,12 @@ nav
     height: 40px;
     grid-column: 2/6;
     grid-row: 1;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: var(--color-cyan);
     /*margin-top: 10vh;*/
-    
-    background-color: #999999;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--color-base02);
 }
 
 .listContainer
@@ -283,14 +331,15 @@ nav
     margin: 0 auto 0 auto;
     padding: 0;
     overflow: hidden;
-    
+    background-color: var(--color-base02);
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .infoItem
 {
     text-decoration: none;
     float: left;
-    margin-left: 2vw; 
+    margin-left: 2vw;
 }
 
 #lastItem
@@ -299,6 +348,7 @@ nav
 
 .infoLink
 {
+    color: var(--color-base2);
     text-decoration: none;
     display: block;
     text-align: center;
@@ -311,7 +361,7 @@ nav
 
 .images
 {
-    
+
     grid-column: 2/5;
     grid-row: 2;
 }
@@ -372,8 +422,6 @@ th, td {
     grid-row: 1;
     grid-column: 3/4;
 }
-
-
 
 .userText
 {
