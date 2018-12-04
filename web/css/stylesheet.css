@@ -26,7 +26,7 @@
 
 td,th {
     text-align: center;
-    } 
+    }
 
 .nav a
 {
@@ -67,7 +67,7 @@ li
 {
     font-size: 20px;
     margin: auto;
-    height: 5vh;
+    height: 6vh;
     text-align: center;
     border-radius: 5px;
     color: var(--color-base2);
