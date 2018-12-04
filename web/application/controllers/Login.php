@@ -32,7 +32,9 @@ class Login extends CI_Controller
 
       $page = 'pages/etusivu';
       $this->load->view('templates/header');
+      $data['doorState'] = $this->DatabaseModel->checkDoorState();
       $data['temp'] = $this->DatabaseModel->getCurTempData();
+      $data['row'] = $this->DatabaseModel->getAlertTimes();
       $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
       $data['manualOn'] = $this->DatabaseModel->checkManualAlert();
       $data['recentEvent'] = $this->DatabaseModel->getRecentEvent();
