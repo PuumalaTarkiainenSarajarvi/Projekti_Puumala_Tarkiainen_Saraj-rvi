@@ -1,5 +1,5 @@
-<div class="sensorTable">
-    <table>
+<div class="sensorContainer">
+    <table class="sensorTable">
         <tr>
             <th>Tapahtuma aika</th>
         </tr>

@@ -3,9 +3,9 @@
     text-decoration: none;
 }
 
-body
-{
-}
+td,th {
+    text-align: center;
+    } 
 
 .nav a
 {
@@ -329,18 +329,38 @@ table
     width: 50vh;
     display: inline-block;
     margin: 0 25vw 0 25vw;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 th, td {
     border-bottom: 1px solid #ddd;
 }
 
-.sensorTable
+.sensorContainer
 {
+    width: 100%;
+    margin: 0 auto 0 auto;
     text-align: center;
     grid-column: 2/6;
     grid-row: 2;
+}
+
+.sensorTable td, tr, th
+{
+    width: 400px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.sensorTableTemps
+{
+    /*width: 400px;
+    display: block;*/
+}
+
+.sensorTable td
+{
+    text-align: center;
 }
 
 /*Kirjautumissivu*/

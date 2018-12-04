@@ -1,5 +1,5 @@
-<div class="sensorTable">
-    <table>
+<div class="sensorContainer">
+    <table class="sensorTableTemps">
         <tr>
             <th>Lämpötila</th>
             <th>Päivämäärä</th>
@@ -13,7 +13,7 @@
     ?>
         <tr>
             <td>
-                <?php echo $row['temperature'];
+                <?php echo $row['temperature24h'];
                 ?>
             </td>
             <td>
