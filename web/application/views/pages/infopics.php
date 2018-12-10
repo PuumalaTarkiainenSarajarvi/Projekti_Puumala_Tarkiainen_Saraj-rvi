@@ -7,6 +7,6 @@
                     if($limit == 10) break;
     ?>
         <img id="img" src=<?php echo "/Projekti_Puumala_Tarkiainen_Saraj-rvi/web/$pic"?>>
-        <em><?php echo $pic ?></em>
+        <div class="picNameContainer"><em class="picName"><?php echo $pic ?></em></div>
                 <?php } ?>
 </div>
