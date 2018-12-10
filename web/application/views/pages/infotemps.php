@@ -1,5 +1,5 @@
 <div class="sensorContainer">
-  <h1>Keskiarvolämpötilat:</h1>
+  <h3>Keskiarvolämpötilat:</h3>
     <table class="sensorTableTemps">
         <tr>
             <th>Lämpötila 12h</th>

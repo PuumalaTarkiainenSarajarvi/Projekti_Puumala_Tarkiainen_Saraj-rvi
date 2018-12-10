@@ -1,5 +1,5 @@
 <div class="sensorContainer">
-  <h1>Liikeanturin aktivoinnit:</h1>
+  <h3>Liikeanturin aktivoinnit:</h3>
     <table class="sensorTable">
         <tr>
             <th>Tapahtuma aika</th>
