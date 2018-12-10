@@ -86,10 +86,6 @@ nav
     height: 100%;
 }
 
-.time
-{
-    min-height: 5vh;
-}
 
 .container
 {
@@ -138,6 +134,24 @@ nav
     height: 100vh;
     grid-column: 5/6;
     background-color: #999999;
+}
+
+.time
+{
+    min-height: 5vh;
+}
+
+/*Etusivu*/
+
+.alarmButton
+{
+    left: 50%;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: red;
+    bottom: 0;   
 }
 
 .temp
@@ -362,17 +376,16 @@ nav
 }
 
 .images
-{
-
-    grid-column: 2/5;
+{   
+    display: block;
+    margin: 0 auto 0 auto;
+    grid-column: 2/6;
     grid-row: 2;
 }
 
 #img
 {
-    float: left;
-    display: block;
-    height: auto;
+    
 }
 
 table
