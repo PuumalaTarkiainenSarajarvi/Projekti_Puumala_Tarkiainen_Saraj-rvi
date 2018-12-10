@@ -1,5 +1,5 @@
 <div class="images">
-  <h3>Valvontakameran kuvat:</h3>
+  <h2>Valvontakameran kuvat:</h2>
     <?php
      $limit = 0;
      foreach (array_reverse($pics) as $pic)

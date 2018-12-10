@@ -1,5 +1,5 @@
 <div class="sensorContainer">
-  <h3>Oven aukaisut:</h3>
+  <h2>Oven aukaisut:</h2>
     <table class="sensorTable">
         <tr>
             <th>Tapahtuma aika</th>
