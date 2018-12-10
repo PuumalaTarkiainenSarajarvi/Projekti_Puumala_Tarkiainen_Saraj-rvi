@@ -9,7 +9,7 @@
     <h3>Tilan ovi on <?php if($doorState){ echo "auki."; } else{ echo "kiinni"; } ?></h3>
     
 </div>
-<h3 class="temp">Lämpötila: <?php echo $temp ?>°C</h3>
+<h3 class="temp">Lämpötila: <?php echo round($temp, 1, PHP_ROUND_HALF_UP); ?>°C</h3>
 
 <script type="text/javascript">
 

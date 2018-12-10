@@ -2,7 +2,8 @@
   <h1>Keskiarvolämpötilat:</h1>
     <table class="sensorTableTemps">
         <tr>
-            <th>Lämpötila</th>
+            <th>Lämpötila 12h</th>
+            <th>Lämpötila 24h</th>
             <th>Päivämäärä</th>
         </tr>
 
@@ -14,7 +15,12 @@
     ?>
         <tr>
             <td>
-                <?php echo substr($row['temperature24h'],0,4);
+                <?php echo round( $row['temperature12h'], 1, PHP_ROUND_HALF_UP);
+                ?>
+            </td>
+
+            <td>
+                <?php echo round( $row['temperature24h'], 1, PHP_ROUND_HALF_UP);
                 ?>
             </td>
             <td>
