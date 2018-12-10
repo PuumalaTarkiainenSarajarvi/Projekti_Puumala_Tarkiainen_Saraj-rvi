@@ -37,6 +37,12 @@
             redirect('alertsettings','refresh');
         }
 
+        public function stopAlarm()
+        {
+            $this->DatabaseModel->stopAlarm();
+            redirect('etusivu','refresh');
+        }
+
         public function stopAutoAlerts()
         {
             $this->DatabaseModel->stopAutoAlert();
