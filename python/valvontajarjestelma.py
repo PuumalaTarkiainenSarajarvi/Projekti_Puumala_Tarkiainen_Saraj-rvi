@@ -59,7 +59,7 @@ def checkAlarm():
 
 def sendTemperature(line):
     sql = "INSERT INTO HourlyTemperature(ID, Temperature) VALUES (%s, %s)"
-    val = (25, float(line))        # ID:25 = Uusin arvo 
+    val = (mycursor.lastrowid, float(line)) 
     mycursor.execute(sql, val)
     mydb.commit()
 
