@@ -32,6 +32,7 @@ class Login extends CI_Controller
 
       $page = 'pages/etusivu';
       $this->load->view('templates/header');
+      $data['alarmTriggered'] = $this->DatabaseModel->checkAlarmTriggered();
       $data['autoOnOff'] = $this->DatabaseModel->checkAutoOnOff();
       $data['doorState'] = $this->DatabaseModel->checkDoorState();
       $data['temp'] = $this->DatabaseModel->getCurTempData();
