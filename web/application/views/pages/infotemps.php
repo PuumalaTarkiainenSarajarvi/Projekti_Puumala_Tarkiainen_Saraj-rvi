@@ -1,4 +1,5 @@
 <div class="sensorContainer">
+  <h1>Keskiarvolämpötilat:</h1>
     <table class="sensorTableTemps">
         <tr>
             <th>Lämpötila</th>
@@ -18,7 +19,7 @@
             </td>
             <td>
                 <?php echo $row['dt'];
-                      $limit++; 
+                      $limit++;
                 }?>
             </td>
         </tr>

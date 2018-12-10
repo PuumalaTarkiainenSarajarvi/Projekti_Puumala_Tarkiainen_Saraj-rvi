@@ -1,4 +1,5 @@
 <div class="sensorContainer">
+  <h1>Liikeanturin aktivoinnit:</h1>
     <table class="sensorTable">
         <tr>
             <th>Tapahtuma aika</th>
@@ -13,7 +14,7 @@
         <tr>
             <td>
                 <?php echo $row['dt'];
-                      $limit++; 
+                      $limit++;
                 }?>
                 </td>
         </tr>
