@@ -20,6 +20,7 @@
             $this->DatabaseModel->getDoorData();
         }
 
+        //Päivitetään hälytyksen aikaväli
         public function postTimes()
         {
             $startTime = $_POST['startTime'];
@@ -29,7 +30,7 @@
             
             redirect('alertsettings','refresh');
         }
-
+        
         public function startAutoAlerts()
         {
             $this->DatabaseModel->startAutoAlert();
