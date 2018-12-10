@@ -37,6 +37,12 @@
             redirect('alertsettings','refresh');
         }
 
+        public function stopAlarm()
+        {
+            $this->DatabaseModel->stopAlarm();
+            redirect('etusivu','refresh');
+        }
+
         public function stopAutoAlerts()
         {
             $this->DatabaseModel->stopAutoAlert();
@@ -53,6 +59,12 @@
         {
             $this->DatabaseModel->stopManualAlert();   
             redirect('alertsettings','refresh');
+        }
+
+        public function deletePic()
+        {
+            unlink($_POST['pic']);
+            redirect('infopics','refresh');
         }
 
     }
