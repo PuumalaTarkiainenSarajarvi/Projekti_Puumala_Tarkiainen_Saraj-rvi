@@ -61,6 +61,12 @@
             redirect('alertsettings','refresh');
         }
 
+        public function deletePic()
+        {
+            unlink($_POST['pic']);
+            redirect('infopics','refresh');
+        }
+
     }
 
 ?>
