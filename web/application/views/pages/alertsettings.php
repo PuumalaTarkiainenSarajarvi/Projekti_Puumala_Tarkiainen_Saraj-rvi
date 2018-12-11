@@ -28,6 +28,7 @@
     {?>
     <div class="thirdRow">
         <h3>Manuaalisen hälytyksen käynnistys</h3>
+        <p>Nappia painamalla käynnistetään manuaaliset hälytykset</p>
             <form style="pointer-events: none;" action=" <?php echo site_url('databaseController/startmanualalerts')?> " method="post">
                 <input style="background-color:none;" disabled class="startButtonDisabled" type="submit" value="Käynnistä hälytykset">
             </form>
