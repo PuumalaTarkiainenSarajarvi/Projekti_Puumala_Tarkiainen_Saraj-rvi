@@ -14,6 +14,6 @@
           <input class="deleteButton" type="submit" value="Poista">
           <input type="hidden" name="pic" value="<?php echo $pic ?>">
         </form>
-        <div class="picNameContainer"><em class="picName"><?php echo str_replace("-"," ",substr($pic, 4, 19)); ?></em></div>
+        <div class="picNameContainer"><em class="picName"><?php echo str_replace("-",".",substr($pic, 4, 19)); ?></em></div>
                 <?php $limit++;} ?>
   </div>
