@@ -62,3 +62,6 @@ $route['infotemps'] = 'Route/infotemps';
 $route['infopics'] = 'Route/infopics';
 $route['alertsettings'] = 'Route/alertSettings';
 $route['loginsettings'] = 'Route/loginSettings';
+$route['change_username'] = 'LoginSettings/change_username';
+$route['change_password'] = 'LoginSettings/change_password';
+$route['change_email'] = 'LoginSettings/change_email';
