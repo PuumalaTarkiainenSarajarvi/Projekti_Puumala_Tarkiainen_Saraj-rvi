@@ -397,25 +397,24 @@ nav
 .picNameContainer
 {
     grid-column: 2/6;
-    grid-row: 4;
     text-align: center;
 }
 
 .picName
 {
+    float: left;
     text-align: center;
 }
 
 .picDeleteForm
 {
     grid-column: 5/6;
-    grid-row: 3;
 }
 
 .deleteButton
 {
     margin: 0 auto 0 2vw;
-    grid-column: 3/5;
+    float: right;
     text-align: center;
     height: 50px;
     width: 100px;
