@@ -13,10 +13,17 @@ class Login extends CI_Controller
 
   public function user_login()
   {
-    $page = 'pages/login';
-    $this->load->view('templates/header');
-    $this->load->view($page);
-    $this->load->view('templates/footer');
+    if(isset($_SESSION['user_log_in']))
+    {
+      redirect('etusivu');
+    }
+    else
+    {
+      $page = 'pages/login';
+      $this->load->view('templates/header');
+      $this->load->view($page);
+      $this->load->view('templates/footer');
+    }
   }
 
   public function user_log_in()
