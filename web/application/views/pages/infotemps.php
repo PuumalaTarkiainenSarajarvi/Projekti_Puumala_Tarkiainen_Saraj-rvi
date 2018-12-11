@@ -24,7 +24,10 @@
                 ?>
             </td>
             <td>
-                <?php echo $row['dt'];
+            <?php 
+                    $date = DateTime::createFromFormat('Y-m-d H:i:s', $row['dt']);
+                    echo $date->format('H:i d.m.Y');
+                    
                       $limit++;
                 }?>
             </td>
