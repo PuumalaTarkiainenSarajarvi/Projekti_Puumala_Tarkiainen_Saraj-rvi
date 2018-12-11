@@ -1,9 +1,30 @@
+import os
+import sys
 import datetime
 import serial
 import mysql.connector
 import smtplib
 import threading
 import picamera
+
+old_out = sys.stdout
+
+class StampedOut:
+    nl = True
+
+    def write(self, x):    # ylikirjoitettu write-funktio
+        if x == '\n':
+            old_out.write(x)
+            self.nl = True
+        elif self.nl:
+            old_out.write('<%s> %s' % (str(datetime.datetime.now().strftime("%H.%M.%S %d-%m-%Y")), x))
+            self.nl = False
+        else:
+            old_out.write(x)
+
+sys.stdout = StampedOut()
+
+pingHost = "www.google.com"
 
 mydb = mysql.connector.connect(
     host="***",
@@ -38,12 +59,12 @@ def sendMail(cause):
     server.login("***@***", "***")
 
     alarmInfo = "Jarjestelman halytys laukesi koska "
-    alarmStamp = datetime.datetime.now().strftime("%Y-%m-%d %H.%M.%S")
+    alarmStamp = datetime.datetime.now().strftime("%H.%M.%S %d-%m-%Y")
 
     userEmail = getEmailAddress()
     
     msg = alarmInfo + cause + alarmStamp
-    server.sendmail("***", userEmail, msg)
+    server.sendmail("***@***", userEmail, msg)
     server.quit()
 
 def checkAlarm():
@@ -81,12 +102,11 @@ while True:
 
     try:
         float(line)
-        print("##DEBUG: temperature:")
-        print(line)
+        print("##DEBUG: temperature: " + line)
         sendTemperature(line)
         
     except ValueError:
-        print("##DEBUG: string not temperature")
+        pass
     
     if line == "motion\n":
         print("##DEBUG: motion")
@@ -94,14 +114,19 @@ while True:
         mydb.commit()
 
         if checkAlarm() == 1 and emailEnableFlag == 1:
-            print("##DEBUG: Sending mail...")
-            cause = "liikeanturi on aktivoitunut. "      
-            sendMail(cause)
+            print("##DEBUG: sending mail...")
+            cause = "liikeanturi on aktivoitunut. "
+            
+            if os.system("ping -c 1 " + pingHost) == 0:
+                sendMail(cause)
+                print("##DEBUG: mail sent successfully")
 
-            emailEnableFlag = 0
-            print("##DEBUG: disabling email...")
-            timer = threading.Timer(60.0, enableEmail)
-            timer.start()
+                emailEnableFlag = 0
+                print("##DEBUG: disabling email...")
+                timer = threading.Timer(60.0, enableEmail)
+                timer.start()
+            else:
+                print("##DEBUG: network is down!")
 
         if checkAlarm() == 1:
             takePicture()
@@ -120,11 +145,16 @@ while True:
         mydb.commit()
 
         if checkAlarm() == 1 and emailEnableFlag == 1:
-            print("##DEBUG: Sending mail...")
+            print("##DEBUG: sending mail...")
             cause = "ovi on avautunut. "
-            sendMail(cause)
-
-            emailEnableFlag = 0
-            print("##DEBUG: disabling email...")
-            timer = threading.Timer(60.0, enableEmail)
-            timer.start()
+            
+            if os.system("ping -c 1 " + pingHost) == 0:
+                sendMail(cause)
+                print("##DEBUG: mail sent successfully")
+                
+                emailEnableFlag = 0
+                print("##DEBUG: disabling email...")
+                timer = threading.Timer(60.0, enableEmail)
+                timer.start()
+            else:
+                print("##DEBUG: network is down!")
