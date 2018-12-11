@@ -1,7 +1,9 @@
 <div class="sensorContainer">
+  <h2>Keskiarvolämpötilat:</h2>
     <table class="sensorTableTemps">
         <tr>
-            <th>Lämpötila</th>
+            <th>Lämpötila 12h</th>
+            <th>Lämpötila 24h</th>
             <th>Päivämäärä</th>
         </tr>
 
@@ -13,12 +15,20 @@
     ?>
         <tr>
             <td>
-                <?php echo $row['temperature24h'];
+                <?php echo round( $row['temperature12h'], 1, PHP_ROUND_HALF_UP);
+                ?>
+            </td>
+
+            <td>
+                <?php echo round( $row['temperature24h'], 1, PHP_ROUND_HALF_UP);
                 ?>
             </td>
             <td>
-                <?php echo $row['dt'];
-                      $limit++; 
+            <?php 
+                    $date = DateTime::createFromFormat('Y-m-d H:i:s', $row['dt']);
+                    echo $date->format('H:i d.m.Y');
+                    
+                      $limit++;
                 }?>
             </td>
         </tr>

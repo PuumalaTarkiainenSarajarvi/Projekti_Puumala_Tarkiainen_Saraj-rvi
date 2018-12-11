@@ -20,6 +20,7 @@
             $this->DatabaseModel->getDoorData();
         }
 
+        //Päivitetään hälytyksen aikaväli
         public function postTimes()
         {
             $startTime = $_POST['startTime'];
@@ -29,11 +30,17 @@
             
             redirect('alertsettings','refresh');
         }
-
+        
         public function startAutoAlerts()
         {
             $this->DatabaseModel->startAutoAlert();
             redirect('alertsettings','refresh');
+        }
+
+        public function stopAlarm()
+        {
+            $this->DatabaseModel->stopAlarm();
+            redirect('etusivu','refresh');
         }
 
         public function stopAutoAlerts()
@@ -52,6 +59,12 @@
         {
             $this->DatabaseModel->stopManualAlert();   
             redirect('alertsettings','refresh');
+        }
+
+        public function deletePic()
+        {
+            unlink($_POST['pic']);
+            redirect('infopics','refresh');
         }
 
     }

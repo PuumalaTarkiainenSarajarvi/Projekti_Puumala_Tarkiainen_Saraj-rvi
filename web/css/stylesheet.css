@@ -1,4 +1,5 @@
 /* Variables */
+
 :root
 {
   --color-base03  :#002b36; /*brblack*/
@@ -26,7 +27,7 @@
 
 td,th {
     text-align: center;
-    } 
+    }
 
 .nav a
 {
@@ -43,12 +44,10 @@ body
 a
 {
     text-decoration: none;
-    color: black;
 }
 
 a:link
 {
-    color: black;
     text-decoration: none;
 }
 
@@ -67,7 +66,7 @@ li
 {
     font-size: 20px;
     margin: auto;
-    height: 5vh;
+    height: 6vh;
     text-align: center;
     border-radius: 5px;
     color: var(--color-base2);
@@ -76,7 +75,7 @@ li
 li:hover
 {
     background-color: var(--color-base03);
-    height: 5vh;
+    height: 6vh;
     border-radius: 5px;
     min-height: 40px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -86,6 +85,7 @@ nav
 {
     height: 100%;
 }
+
 
 .container
 {
@@ -136,6 +136,23 @@ nav
     background-color: #999999;
 }
 
+.time
+{
+    min-height: 5vh;
+}
+
+/*Etusivu*/
+
+.alarmButton
+{
+    margin: 0 auto 0 auto;
+    grid-column: 3/5;
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    background-color: red;
+}
+
 .temp
 {
     grid-row: 1;
@@ -148,7 +165,6 @@ nav
 
 .settingsNav
 {
-    width: 100%;
     height: 40px;
     border-bottom-style: solid;
     border-left-style: solid;
@@ -228,7 +244,7 @@ nav
     text-align: center;
     position: relative;
     height: 100%;
-    min-height: 25vh;
+    min-height: 30vh;
     border: 1px solid var(--color-cyan);
     grid-row: 3;
     grid-column: 2/4;
@@ -239,7 +255,7 @@ nav
     text-align: center;
     position: relative;
     height: 100%;
-    min-height: 25vh;
+    min-height: 30vh;
     border: 1px solid var(--color-cyan);
     display: block;
     float: right;
@@ -303,7 +319,6 @@ nav
 .infoNav
 {
     display: inline;
-    width: 100%;
     height: 40px;
     grid-column: 2/6;
     grid-row: 1;
@@ -359,18 +374,51 @@ nav
     margin: 0 auto 0 auto;
 }
 
-.images
+.picHead
 {
-
-    grid-column: 2/5;
+    text-align: center;
+    grid-column: 2/6;
     grid-row: 2;
+}
+
+.images
+{   
+    display: block;
+    margin: 0 auto 0 auto;
+    grid-column: 2/6;
+    grid-row: 3;
 }
 
 #img
 {
+    
+}
+
+.picNameContainer
+{
+    grid-column: 2/6;
+    text-align: center;
+}
+
+.picName
+{
     float: left;
-    display: block;
-    height: auto;
+    text-align: center;
+}
+
+.picDeleteForm
+{
+    grid-column: 5/6;
+}
+
+.deleteButton
+{
+    margin: 0 auto 0 2vw;
+    float: right;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    background-color: red;
 }
 
 table
@@ -425,6 +473,6 @@ th, td {
 
 .userText
 {
-    margin: 2vh 0 2vh 0;
+    margin: 0 0 2vh 0;
     font-size: 22px;
 }

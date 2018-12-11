@@ -21,11 +21,15 @@ class Route extends CI_Controller{
       }
     }
 
+    //Route etusivulle
     public function index()
     {
 
          $this->check_permission();
          $page = 'pages/etusivu';
+         $data['alarmTriggered'] = $this->DatabaseModel->checkAlarmTriggered();
+         $data['autoOnOff'] = $this->DatabaseModel->checkAutoOnOff();
+         $data['doorState'] = $this->DatabaseModel->checkDoorState();
          $data['temp'] = $this->DatabaseModel->getCurTempData();
          $data['row'] = $this->DatabaseModel->getAlertTimes();
          $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
@@ -37,7 +41,7 @@ class Route extends CI_Controller{
          $this->load->view($page, $data);
          $this->load->view('templates/footer');
     }
-
+    //Route Asetussivun navigaatiolle
     public function settings()
     {
          $this->check_permission();
@@ -51,11 +55,13 @@ class Route extends CI_Controller{
          $this->load->view('templates/footer');
     }
 
+    //Route hälytysasetussivulle
     public function alertSettings()
     {
          $this->check_permission();
          $page = 'pages/alertsettings';
          $nav = 'pages/settings';
+         $data['row'] = $this->DatabaseModel->getAlertTimes();
          $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
          $data['manualAlertsOn'] = $this->DatabaseModel->checkManualAlert();
          $data['autoAlertOn'] = $this->DatabaseModel->checkAutoOnOff();
@@ -65,7 +71,7 @@ class Route extends CI_Controller{
          $this->load->view($page, $data);
          $this->load->view('templates/footer');
     }
-
+    //Route kirjautumisasetussivulle
     public function loginSettings()
     {
          $this->check_permission();
@@ -79,7 +85,7 @@ class Route extends CI_Controller{
          $this->load->view($page, $data);
          $this->load->view('templates/footer');
     }
-
+    //Route seurantasivun navigaatiolle
     public function info()
     {
         $this->check_permission();
@@ -91,7 +97,7 @@ class Route extends CI_Controller{
         $this->load->view($page, $data);
         $this->load->view('templates/footer');
     }
-
+    //Route liiketunnistimen seuranta sivulle
     public function infoMotion()
     {
         $this->check_permission();
@@ -105,7 +111,7 @@ class Route extends CI_Controller{
         $this->load->view($content, $data);
         $this->load->view('templates/footer');
     }
-
+    //Route oven seuranta sivulle
     public function infoDoors()
     {
         $this->check_permission();
@@ -119,7 +125,7 @@ class Route extends CI_Controller{
         $this->load->view($content, $data);
         $this->load->view('templates/footer');
     }
-
+    //Route lämpötilan seuranta sivulle
     public function infoTemps()
     {
         $this->check_permission();
@@ -132,7 +138,7 @@ class Route extends CI_Controller{
         $this->load->view($content, $data);
         $this->load->view('templates/footer');
     }
-
+    //Route kuvien seuranta sivulle
     public function infoPics()
     {
         $this->check_permission();

@@ -1,4 +1,5 @@
 <div class="sensorContainer">
+  <h2>Liikeanturin aktivoinnit:</h2>
     <table class="sensorTable">
         <tr>
             <th>Tapahtuma aika</th>
@@ -12,8 +13,10 @@
     ?>
         <tr>
             <td>
-                <?php echo $row['dt'];
-                      $limit++; 
+                <?php 
+                    $date = DateTime::createFromFormat('Y-m-d H:i:s', $row['dt']);
+                    echo $date->format('H:i d.m.Y');
+                      $limit++;
                 }?>
                 </td>
         </tr>

@@ -3,11 +3,12 @@ import serial
 import mysql.connector
 import smtplib
 import threading
+import picamera
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="*",
-    passwd="****"
+    host="***",
+    user="***",
+    passwd="***"
 )
 
 ser = serial.Serial("/dev/ttyACM0")
@@ -30,10 +31,11 @@ def getEmailAddress():
 
     return emailAddress
     
-def sendMail(cause):
+def sendMail(cause):   
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("*", "*")
+    
+    server.login("***@***", "***")
 
     alarmInfo = "Jarjestelman halytys laukesi koska "
     alarmStamp = datetime.datetime.now().strftime("%Y-%m-%d %H.%M.%S")
@@ -41,7 +43,7 @@ def sendMail(cause):
     userEmail = getEmailAddress()
     
     msg = alarmInfo + cause + alarmStamp
-    server.sendmail("valvo.jarjestelma@gmail.com", userEmail, msg)
+    server.sendmail("***", userEmail, msg)
     server.quit()
 
 def checkAlarm():
@@ -55,14 +57,36 @@ def checkAlarm():
     else:
         return 0
 
+def sendTemperature(line):
+    sql = "INSERT INTO HourlyTemperature(ID, Temperature) VALUES (%s, %s)"
+    val = (0, float(line))          # 0 = syotto uusimpaan indeksiin
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+def takePicture():
+    print "##DEBUG: taking picture..."
+
+    directory = "/var/www/public_html/valvonta/img/"
+    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    directory = directory + date + ".jpg"
+
+    with picamera.PiCamera() as camera :
+        camera.resolution = (640, 480)
+        camera.capture(directory)
+
+    print "##DEBUG: snap!"
+
 while True:
     line = ser.readline()
 
     try:
         float(line)
-        print("##DEBUG: temperature")
+        print("##DEBUG: temperature:")
         print(line)
+        sendTemperature(line)
+        
     except ValueError:
+        print("##DEBUG: string not temperature")
     
     if line == "motion\n":
         print("##DEBUG: motion")
@@ -71,13 +95,16 @@ while True:
 
         if checkAlarm() == 1 and emailEnableFlag == 1:
             print("##DEBUG: Sending mail...")
-            cause = "liikeanturi on aktivoitunut. "
+            cause = "liikeanturi on aktivoitunut. "      
             sendMail(cause)
 
             emailEnableFlag = 0
             print("##DEBUG: disabling email...")
             timer = threading.Timer(60.0, enableEmail)
             timer.start()
+
+        if checkAlarm() == 1:
+            takePicture()
               
     if line == "magnetOn\n":
         print("##DEBUG: magnetOn")
