@@ -35,10 +35,10 @@
             ?>
             <p class="userText">Hei, <?php echo $_SESSION['user'];?>!</p>
           <ul>
-              <a href="<?php echo site_url('etusivu') ?>"><li><i class="fa fa-home"></i> Etusivu</li></a>
-              <a href="<?php echo site_url('infomotion') ?>"><li><i class="fa fa-binoculars"></i> Seuranta</li></a>
-              <a href="<?php echo site_url('alertsettings') ?>"><li><i class="fa fa-cog"></i> Asetukset</li></a>
-              <a href="<?php echo site_url('logout') ?>"><li><i class="fa fa-sign-out"></i> Kirjaudu ulos</li></a>
+              <a href="<?php echo site_url('etusivu') ?>"><li id="navItem"><i class="fa fa-home"></i> Etusivu</li></a>
+              <a href="<?php echo site_url('infomotion') ?>"><li id="navItem"><i class="fa fa-binoculars"></i> Seuranta</li></a>
+              <a href="<?php echo site_url('alertsettings') ?>"><li id="navItem"><i class="fa fa-cog"></i> Asetukset</li></a>
+              <a href="<?php echo site_url('logout') ?>"><li id="navItem"><i class="fa fa-sign-out"></i> Kirjaudu ulos</li></a>
           </ul>
           <?php
         }

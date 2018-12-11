@@ -60,5 +60,5 @@ $route['infomotion'] = 'Route/infomotion';
 $route['infodoors'] = 'Route/infodoors';
 $route['infotemps'] = 'Route/infotemps';
 $route['infopics'] = 'Route/infopics';
-$route['alertsettings'] = 'Route/alertsettings';
-$route['loginsettings'] = 'Route/loginsettings';
+$route['alertsettings'] = 'Route/alertSettings';
+$route['loginsettings'] = 'Route/loginSettings';

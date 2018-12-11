@@ -61,6 +61,7 @@ class Route extends CI_Controller{
          $this->check_permission();
          $page = 'pages/alertsettings';
          $nav = 'pages/settings';
+         $data['row'] = $this->DatabaseModel->getAlertTimes();
          $data['verifyOn'] = $this->DatabaseModel->checkAutoAlert();
          $data['manualAlertsOn'] = $this->DatabaseModel->checkManualAlert();
          $data['autoAlertOn'] = $this->DatabaseModel->checkAutoOnOff();
