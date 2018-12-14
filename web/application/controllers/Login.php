@@ -15,8 +15,19 @@ class Login extends CI_Controller
   {
     if(isset($_SESSION['user_log_in']))
     {
-      redirect('etusivu');
+      if($_SESSION['user_log_in'] == true) 
+      {
+        redirect('etusivu');
+      }
+      else
+      {
+        $page = 'pages/login';
+        $this->load->view('templates/header');
+        $this->load->view($page);
+        $this->load->view('templates/footer');
+      }
     }
+
     else
     {
       $page = 'pages/login';
@@ -24,6 +35,7 @@ class Login extends CI_Controller
       $this->load->view($page);
       $this->load->view('templates/footer');
     }
+    
   }
 
   public function user_log_in()
