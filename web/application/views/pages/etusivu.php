@@ -3,7 +3,7 @@
     <h3>Hälytykset ovat tällä hetkellä <?php if($verifyOn && !$autoOnOff){ echo "automaattitilassa"?>
     <h3>Automaattinen hälytys on asetettu välille
     <?php if(isset($row)) {echo substr($row['dt'],0,-3);?> - <?php echo substr($row['dt2'],0,-3);}echo "</h3>"; }?>
-    <?php if($manualOn) echo "manuaaliitilassa"?>
+    <?php if($manualOn) echo "manuaalitilassa"?>
     <?php if($manualOn == false && $verifyOn == false) echo "pois käytöstä"?>
     <?php if($autoOnOff == true) echo "kytkettynä päälle automaattisesti"?></h3>
 
