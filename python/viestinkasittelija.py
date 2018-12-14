@@ -113,6 +113,9 @@ while True:
         mycursor.callproc('PutInfoAndTime') # aikaleima
         mydb.commit()
 
+        if checkAlarm() == 1:
+            takePicture()
+        
         if checkAlarm() == 1 and emailEnableFlag == 1:
             print("##DEBUG: sending mail...")
             cause = "liikeanturi on aktivoitunut. "
@@ -127,9 +130,6 @@ while True:
                 timer.start()
             else:
                 print("##DEBUG: network is down!")
-
-        if checkAlarm() == 1:
-            takePicture()
               
     if line == "magnetOn\n":
         print("##DEBUG: magnetOn")
